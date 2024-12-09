@@ -39,6 +39,23 @@ public class FileController {
         }
     }
 
+    @PostMapping("/upload-single")
+    public ResponseEntity<?> subirUnSoloArchivo(@RequestParam("file") MultipartFile file) {
+        try {
+            System.out.println("Nombre del archivo: " + file.getOriginalFilename());
+            System.out.println("Tamaño del archivo: " + file.getSize());
+
+            if (file.getSize() > 25 * 1024 * 1024) {
+                return ResponseEntity.badRequest().body("El tamaño máximo del archivo es de 25MB.");
+            }
+
+            fileService.guardarArchivo(file);
+            return ResponseEntity.ok().body("Archivo subido correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body("Error al procesar el archivo.");
+        }
+    }
 
 
 }
