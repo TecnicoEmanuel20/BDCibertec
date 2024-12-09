@@ -23,7 +23,9 @@ public class FileController {
             @RequestParam("files") List<MultipartFile> files
     ) {
         try {
-
+            if (files.size() != 3) {
+                return ResponseEntity.badRequest().body("Debes subir exactamente 3 archivos.");
+            }
             for (MultipartFile file : files) {
                 if (!fileService.validarExtension(file)) {
                     return ResponseEntity.badRequest().body("Solo se permiten archivos con extensiones PDF, PNG o DOCX.");
