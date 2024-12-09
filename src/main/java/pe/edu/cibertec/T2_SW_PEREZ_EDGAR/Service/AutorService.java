@@ -7,9 +7,10 @@ import pe.edu.cibertec.T2_SW_PEREZ_EDGAR.modelo.Autor;
 
 import java.util.List;
 import java.util.Optional;
-
-@RequiredArgsConstructor
 @Service
+// EDGAR EMANUEL PEREZ ANCHAYA
+@RequiredArgsConstructor
+
 public class AutorService implements IAutorService{
 
     private final AutorRepository autorRepository;
@@ -21,7 +22,7 @@ public class AutorService implements IAutorService{
     }
 
     @Override
-    public Optional<Autor> findById(int id) {
+    public Optional<Autor> findById(Integer id) {
         return autorRepository.findById(id);
     }
 

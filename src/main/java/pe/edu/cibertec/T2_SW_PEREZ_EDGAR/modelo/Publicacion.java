@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
-
+// EDGAR EMANUEL PEREZ ANCHAYA
 @Getter
 @Setter
 @Entity
@@ -17,11 +17,7 @@ public class Publicacion {
     private String titulo;
     private String resumen;
     private Date fechpublicacion;
+    private Integer idautor;
 
-    // Relación con la tabla de categorías
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "idautor", insertable = false, updatable = false, foreignKey =
-    @ForeignKey(name = "publicacion_ibfk_1"))
-    private Autor autor;
 }
 

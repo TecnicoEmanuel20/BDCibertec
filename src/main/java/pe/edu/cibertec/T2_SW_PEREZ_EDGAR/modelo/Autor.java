@@ -3,7 +3,7 @@ package pe.edu.cibertec.T2_SW_PEREZ_EDGAR.modelo;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+// EDGAR EMANUEL PEREZ ANCHAYA
 import java.sql.Date;
 
 @Setter
